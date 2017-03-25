@@ -37,3 +37,9 @@ inoremap <C-f>f []()<esc>F[a
 
 " Move to inside the next parenthesis with <C-r> waiting
 inoremap qq <esc>f(a<C-r>
+
+
+" Manually make a visual selection with `b`, like `v3b`, then
+" <C-f>v will surround the text with [] and place the cursor
+" inside the () with <C-r> waiting for the register
+vnoremap <C-f>v <esc>i[<esc>gvo<esc>a]()<esc>i<C-r>
