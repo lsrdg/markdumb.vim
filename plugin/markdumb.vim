@@ -3,7 +3,7 @@ nnoremap <leader>cx :call PreviousHeader()<cr>
 nnoremap <leader>cv :call NextHeader()<cr>
 
 function! PreviousHeader()
-   ?\v^#\+
+   ?^#\+
    execute "normal! w"
 endfunction
 
