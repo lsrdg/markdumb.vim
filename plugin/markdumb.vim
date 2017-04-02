@@ -20,19 +20,26 @@ endfunction
 "
 " But the function is the base for the Augroup which
 " will apply the mapping only when editing markdown
-inoremap jk <cr><esc>:call NextParagraph(i)<cr>
-
-inoremap kj <cr><esc>:call NextParagraph()<cr>
+"
+"
 
 function! NextParagraph(...)
-   if a:1
+   if a:1 == "i"
     execute "normal! jdapzzO"
-   else
+   elseif a:1 == "n"
     execute "normal! jdapzz"
+   else
+    echom "Ooooops"
    endif
 endfunction
 
+
+inoremap jk <cr><esc>:call NextParagraph("i")<cr>
+
+inoremap kj <cr><esc>:call NextParagraph("n")<cr>
 """"""""""""""""""""""""""""""
+
+
 " Insert markdown's link structure and move to the []
 
 inoremap <C-f>f []()<esc>F[a
