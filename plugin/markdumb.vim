@@ -20,10 +20,16 @@ endfunction
 "
 " But the function is the base for the Augroup which
 " will apply the mapping only when editing markdown
-inoremap jk <cr><esc>:call NextParagraph()<cr>
+inoremap jk <cr><esc>:call NextParagraph(i)<cr>
 
-function! NextParagraph()
-   execute "normal! jdapzzO"
+inoremap kj <cr><esc>:call NextParagraph()<cr>
+
+function! NextParagraph(...)
+   if a:1
+    execute "normal! jdapzzO"
+   else
+    execute "normal! jdapzz"
+   endif
 endfunction
 
 """"""""""""""""""""""""""""""
