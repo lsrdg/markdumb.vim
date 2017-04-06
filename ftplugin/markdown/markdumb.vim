@@ -57,3 +57,6 @@ inoremap qq <esc>f(a<C-r>
 " <C-f>v will surround the text with [] and place the cursor
 " inside the () with <C-r> waiting for the register
 vnoremap <C-f>v <esc>i[<esc>gvo<esc>a]()<esc>i<C-r>
+
+"------------------------------
+" 
