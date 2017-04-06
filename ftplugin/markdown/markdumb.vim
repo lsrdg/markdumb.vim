@@ -1,3 +1,6 @@
+" Open file with opened folds
+execute "normal! zR"
+
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
   finish
