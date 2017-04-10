@@ -1,20 +1,14 @@
-function! s:ModfiableCheck()
-    let modifiable_state = execute('set modifiable?')
-    execute 'normal! dt#'
-endfunction
-	
 function! s:FindHeader()
     let saved_unnamed_register = @@
     let pattern = '/\v^#+/'
 
-    execute 'vimgrep ' . pattern . '%'
-    execute 'vert copen'
-
+    execute 'lvimgrep ' . pattern . '%'
+    execute 'vert lopen 35'
 
     execute 'setlocal modifiable'
     execute '%normal! dt#'
 
-    nnoremap <script> <buffer> <silent> q :cclose<cr>
+    nnoremap <script> <buffer> <silent> q :lclose<cr>
 endfunction
 
 nnoremap <script> <buffer> <silent> <leader>cx 
