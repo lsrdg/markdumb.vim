@@ -1,0 +1,74 @@
+*markdumb.txt* dealing with markdown's corners
+
+  _ __ ___   __ _ _ __| | ____| |_   _ _ __ ___ | |__  ~
+ | '_ ` _ \ / _` | '__| |/ / _` | | | | '_ ` _ \| '_ \ ~
+ | | | | | | (_| | |  |   < (_| | |_| | | | | | | |_) |~
+ |_| |_| |_|\__,_|_|  |_|\_\__,_|\__,_|_| |_| |_|_.__/ ~
+
+
+====================================================================
+CONTENTS                                          *MarkdumbContents*
+
+1. Introduction ......... |MarkdumbIntroduction|
+2. Usage ................ |MarkdumbUsage| 
+3. Mappings ............. |MarkdumbMappings| 
+4. License .............. |MarkdumbLicense| 
+5. Bugs ................. |MarkdumbBugs| 
+6. Contributing ......... |MarkdumbContributing|
+7. Changelog ............ |MarkdumbChangelog| 
+8. Credits .............. |MarkdumbCredits|
+
+====================================================================
+Section 1: Introduction                       *MarkdumbIntroduction*
+
+The original name of this plugin should be "FlyDown". Writing on 
+markdown should feel like literally flying down.
+
+However, it's stupid to create one more plugin for dealing with 
+markdown. But wait! Isn't it weird to a dirty vimrc just because 
+of those edge corners?
+
+Markdumb solves some "common sense's problems", but it also 
+provides opinionated solutions to issues where the common sense 
+probably wouldn't agree that there is one... Who needs to move 
+quickly between tables on markdown?!
+
+====================================================================
+Section 2: Usage                                     *MarkdumbUsage*
+
+Markdumb is a filetype plugin and all of its functionality will
+be available as soon as Vim recognizes that you are editing a
+markdown file.
+
+SECTIONS
+
+Use:
+
+* ]] and [[ to move to the next or previous header respectively.
+* ][ and [] to move between links.
+* -[ and [- to move between tables.
+
+
+HEADER MENU
+
+You have an interactive menu, thanks to the Location List.
+
+* '<leader>cx' will open the Location List populated with all
+headers. 
+* You can navigate the list with normal mode commands
+as usual. 
+* Press '<cr>' (enter) over a header to jump to it.
+* Press 'q' to close the location list.
+
+Keep in mind that the Header Menu is meant to used with large
+and unknown files. Most of the time '[[' and ']]' will be all
+you need.
+
+
+FOLDING
+
+Markdumb implements markdown folding as shared by Steve Losh in:
+https://gist.github.com/sjl/1038710.
+
+By default, the folds will be all opened. Use normal Vim folding
+in order to manipulate them (see *fold-commands*).
