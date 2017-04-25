@@ -34,6 +34,14 @@ endfunction
 "
 "
 
+if !exists('g:NextParagraphI')
+    let g:NextParagraphI = '<c-f>j'
+endif
+
+if !exists('g:NextParagraphN')
+    let g:NextParagraphI = '<c-f>k'
+endif
+    
 function! NextParagraph(...)
    if a:1 == "i"
     execute "normal! jdapzzO"
@@ -44,10 +52,9 @@ function! NextParagraph(...)
    endif
 endfunction
 
+execute "inoremap" g:NextParagraphI '<cr><esc>:call NextParagraph("i")<cr>'
 
-inoremap jk <cr><esc>:call NextParagraph("i")<cr>
-
-inoremap kj <cr><esc>:call NextParagraph("n")<cr>
+execute "inoremap" g:NextParagraphN '<cr><esc>:call NextParagraph("n")<cr>'
 """"""""""""""""""""""""""""""
 
 
@@ -61,7 +68,8 @@ inoremap qq <esc>f(a<C-r>
 " Manually make a visual selection with `b`, like `v3b`, then
 " <C-f>v will surround the text with [] and place the cursor
 " inside the () with <C-r> waiting for the register
-vnoremap <C-f>v <esc>i[<esc>gvo<esc>a]()<esc>i<C-r>
+vnoremap <C-f>v <esc>i[<esc>gvo<esc>ea]()<esc>i<C-r>
 
 "------------------------------
-" 
+" Insert text from the clipboard and paste as a quote
+"inoremap <C-f>c 
