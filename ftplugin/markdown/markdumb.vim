@@ -39,7 +39,7 @@ if !exists('g:NextParagraphI')
 endif
 
 if !exists('g:NextParagraphN')
-    let g:NextParagraphI = '<c-f>k'
+    let g:NextParagraphN = '<c-f>k'
 endif
     
 function! NextParagraph(...)
