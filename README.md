@@ -1,25 +1,12 @@
-*markdumb.txt* dealing with markdown's corners
-
+```
   _ __ ___   __ _ _ __| | ____| |_   _ _ __ ___ | |__  ~
  | '_ ` _ \ / _` | '__| |/ / _` | | | | '_ ` _ \| '_ \ ~
  | | | | | | (_| | |  |   < (_| | |_| | | | | | | |_) |~
  |_| |_| |_|\__,_|_|  |_|\_\__,_|\__,_|_| |_| |_|_.__/ ~
 
+```
 
-====================================================================
-CONTENTS                                          *MarkdumbContents*
-
-1. Introduction ......... |MarkdumbIntroduction|
-2. Usage ................ |MarkdumbUsage| 
-3. Mappings ............. |MarkdumbMappings| 
-4. License .............. |MarkdumbLicense| 
-5. Bugs ................. |MarkdumbBugs| 
-6. Contributing ......... |MarkdumbContributing|
-7. Changelog ............ |MarkdumbChangelog| 
-8. Credits .............. |MarkdumbCredits|
-
-====================================================================
-Section 1: Introduction                       *MarkdumbIntroduction*
+## Introduction                       
 
 The original name of this plugin should be "FlyDown". Writing on 
 markdown should feel like literally flying down.
@@ -33,35 +20,34 @@ provides opinionated solutions to issues where the common sense
 probably wouldn't agree that there is one... Who needs to move 
 quickly between tables on markdown?!
 
-====================================================================
-Section 2: Usage                                     *MarkdumbUsage*
+## Usage    
 
 Markdumb is a filetype plugin and all of its functionality will
 be available as soon as Vim recognizes that you are editing a
 markdown file.
 
-SECTIONS
+### Sections
 
 Use:
 
-* ]] and [[ to move to the next or previous header respectively.
-* ][ and [] to move between links.
-* -[ and [- to move between tables.
+* `]]` and `[[` to move to the next or previous header respectively.
+* `][` and `[]` to move between links.
+* `-[` and `[-` to move between tables.
 
 
-HEADER MENU
+### Header menu
 
 You have an interactive menu, thanks to the Location List.
 
-* '<leader>cx' will open the Location List populated with all
+* `<leader>cx` will open the Location List populated with all
 headers. 
 * You can navigate the list with normal mode commands
 as usual. 
-* Press '<cr>' (enter) over a header to jump to it.
-* Press 'q' to close the location list.
+* Press `<cr>` (enter) over a header to jump to it.
+* Press `q` to close the location list.
 
 Keep in mind that the Header Menu is meant to used with large
-and unknown files. Most of the time '[[' and ']]' will be all
+and unknown files. Most of the time `[[` and `]]` will be all
 you need.
 
 
