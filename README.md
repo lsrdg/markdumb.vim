@@ -51,18 +51,17 @@ and unknown files. Most of the time `[[` and `]]` will be all
 you need.
 
 
-FOLDING
+### FOLDING
 
 Markdumb implements markdown folding as shared by Steve Losh in:
 https://gist.github.com/sjl/1038710.
 
 By default, the folds will be all opened when you first open a 
 markdown file. Use normal Vim folding commands in order to 
-manipulate them (see *fold-commands*).
+manipulate them (see `:h fold-commands`).
 
 
-====================================================================
-Section 3: Mappings                               *MarkdumbMappings*
+## Mappings                               
 
 On the previous section some mappings were featured in order to 
 give a better insight on the Header Menu and the Sections.
@@ -72,28 +71,20 @@ that - not only might seen, but that - are opinionated. However, if
 those dealing with large files or repetitive tasks might find them
 somehow useful. 
 
------------------
-CREATING LINKS  |
------------------
-
+### Creating links
 
 * Insert markdown's link structure and place the cursor between 
-the [], directly from the insert mode:
-- CTRL-f_f
+the `[]`, directly from the insert mode:  `CTRL-f_f`
 
-* Move to inside the next parenthesis with <C-r> waiting (so that 
+* Move to inside the next parenthesis with `<C-r>` waiting (so that 
 you can pasta from the register of your choice), while still in 
-insert mode. Can be used right after you're done with 'CTRL_f-f':
-- qq
+insert mode. Can be used right after you're done with `CTRL_f-f`: `qq`.
 
 * Manually make a visual selection with `b`, like `v3b`, then
- <C-f>v will surround the text with [] and place the cursor
- inside the () with <C-r> waiting for the register:
-- CTRL-f_v
+ `<C-f>v` will surround the text with `[]` and place the cursor
+ inside the `()` with `<C-r>` waiting for the register: `CTRL-f_v`
 
--------------------------------
-OVERWRITE THE NEXT PARAGRAPH  |
--------------------------------
+### Overwrite the next paragraph  
 
 These commands are meant to be used when you are rewriting (or
 translating a paragraph) on the fly. You write the new paragraph
@@ -103,13 +94,45 @@ Once you're done with your new shining paragraph, use one of
 these to detelete the old one and leave you (and the cursor) on
 the middle of the screan ('zz' normal mode command).
 
-- kj	will do as mentioned above. 
-- jk	the same, but will create an empty line above the next
+- `<c-f>k`	will do as mentioned above. 
+- `<c-f>j`	the same, but will create an empty line above the next
 paragraph. Useful if you intend to keep going with the task.
 
+If you don't like those mappings, just change them to something else:
 
-====================================================================
-Section 4: Introduction                            *MarkdumbLicense*
+- `<c-f>k` is controlled by `g:NextParagraphN`:
+
+```vim
+    let g:NextParagraphN = 'kj'
+```
+
+- `<c-f>j` is controlled by `g:NextParagraphI`:
+
+```vim
+    let g:NextParagraphI = 'jk'
+```
+
+## Bugs                                       
+
+Always. Just open an issue on github. (:
+
+
+## Contributing                       
+
+Really? Great! Open an issue on Github or just send a pull request.
+o/
+
+
+## Credits                               
+
+Special thanks to http://stevelosh.com/ and his great:
+http://learnvimscriptthehardway.stevelosh.com/
+
+The Vim community for all available resources.
+
+The Neovim community for keeping the thing breathing.
+
+## License
 
 MIT License
 
@@ -134,31 +157,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-====================================================================
-Section 5: Bugs                                       *MarkdumbBugs*
-
-Always. Just open an issue on github. (:
-
-
-====================================================================
-Section 6: Contributing                       *MarkdumbContributing*
-
-Really? Great! Open an issue on Github or just send a pull request.
-o/
-
-
-====================================================================
-Section 7: Changelog                             *MarkdumbChangelog*
-
-Will be created if necessary. 
-
-
-====================================================================
-Section 8: Credits                               *MarkdumbChangelog*
-
-Special thanks to http://stevelosh.com/ and his great:
-http://learnvimscriptthehardway.stevelosh.com/
-
-The Vim community for all available resources.
-
-The Neovim community for keeping the thing breathing.
