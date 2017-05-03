@@ -24,15 +24,7 @@ function! NextHeader()
 endfunction
 
 """"""""""""""""""""""""""""""
-" Separate two paragraphs and and delete de last one
-" This mapping works by itself:
-"                          
-"                inoremap jk <cr><esc>jdapzzO
-"
-" But the function is the base for the Augroup which
-" will apply the mapping only when editing markdown
-"
-"
+" Translation/Review maps
 
 if !exists('g:NextParagraphI')
     let g:NextParagraphI = '<c-f>j'
@@ -70,6 +62,3 @@ inoremap qq <esc>f(a<C-r>
 " inside the () with <C-r> waiting for the register
 vnoremap <C-f>v <esc>i[<esc>gvo<esc>ea]()<esc>i<C-r>
 
-"------------------------------
-" Insert text from the clipboard and paste as a quote
-"inoremap <C-f>c 
