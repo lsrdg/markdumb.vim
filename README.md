@@ -116,6 +116,11 @@ If you don't like those mappings, just change them to something else:
 
 Always. Just open an issue on github. (:
 
+## TODO list
+
+- [ ] Create clickable TOC
+- [ ] Properly paste quotes
+
 
 ## Contributing                       
 
