@@ -52,12 +52,20 @@ execute "inoremap" g:NextParagraphN '<cr><esc>:call NextParagraph("n")<cr>'
 
 " Insert markdown's link structure and move to the []
 
-inoremap <C-f>f []()<esc>F[a
+if !exists('g:InsertLinkMap')
+    let g:InsertLinkMap = "<C-f>f"
+endif
+
+function! InsertMarkdownLink()
+    execute "normal! i[]()"
+    execute "normal! F]" 
+    startinsert
+endfunction
+
+execute "inoremap" g:InsertLinkMap '<esc>:call InsertMarkdownLink()<cr>'
 
 " Move to inside the next parenthesis with <C-r> waiting
 inoremap qq <esc>f(a<C-r>
-
-" Manually make a visual selection with `b`, like `v3b`, then
 " <C-f>v will surround the text with [] and place the cursor
 " inside the () with <C-r> waiting for the register
 vnoremap <C-f>v <esc>i[<esc>gvo<esc>ea]()<esc>i<C-r>
