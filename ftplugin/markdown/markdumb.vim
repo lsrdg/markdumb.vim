@@ -9,20 +9,6 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
-" Navigate through headers
-nnoremap <leader>cx :call PreviousHeader()<cr>
-nnoremap <leader>cv :call NextHeader()<cr>
-
-function! PreviousHeader()
-   ?^#\+
-   execute "normal! w"
-endfunction
-
-function! NextHeader()
-   /^#\+ 
-   execute "normal! w"
-endfunction
-
 """"""""""""""""""""""""""""""
 " Translation/Review maps
 
