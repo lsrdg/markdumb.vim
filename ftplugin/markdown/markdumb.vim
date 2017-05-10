@@ -55,11 +55,12 @@ execute "inoremap" g:InsertLinkMap '<esc>:call InsertMarkdownLink()<cr>'
 " Move to inside the next parenthesis with <C-r> waiting
 
 if !exists('g:MoveToLinkID')
-    let g:MoveToLinkID = "<C-f>d
+    let g:MoveToLinkID = "<C-f>d"
 endif
 
 function! FindLinkIDParenthesis()
-    execute "normal! f(a<C-r>)"
+    execute "normal! f)"
+    startinsert
 endfunction
 
 execute "inoremap" g:MoveToLinkID '<esc>:call FindLinkIDParenthesis()<cr>'
