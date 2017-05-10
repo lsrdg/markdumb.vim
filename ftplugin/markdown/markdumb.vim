@@ -69,5 +69,15 @@ execute "inoremap" g:MoveToLinkID '<esc>:call FindLinkIDParenthesis()<cr>'
 """"""""""""""""""""""""""""""
 " <C-f>v will surround the text with [] and place the cursor
 " inside the () with <C-r> waiting for the register
-vnoremap <C-f>v <esc>i[<esc>gvo<esc>ea]()<esc>i<C-r>
+
+if !exists('InsertMarkdownLinkVBmap')
+    let g:InsertMarkdownLinkVBmap = "<C-f>v"
+endif
+
+function! InsertMarkdownLinkVB()
+    execute "normal! i[\<esc>gvo\<esc>ea]()\<esc>"
+    startinsert
+endfunction
+
+execute "vnoremap" g:InsertMarkdownLinkVBmap '<esc>:call InsertMarkdownLinkVB()<cr>'
 
