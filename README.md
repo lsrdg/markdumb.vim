@@ -76,13 +76,12 @@ somehow useful.
 * Insert markdown's link structure and place the cursor between 
 the `[]`, directly from the insert mode:  `CTRL-f_f`
 
-* Move to inside the next parenthesis with `<C-r>` waiting (so that 
-you can pasta from the register of your choice), while still in 
-insert mode. Can be used right after you're done with `CTRL_f-f`: `qq`.
+* Move to inside the next parenthesis, while still in 
+insert mode. Can be used right after you're done with `CTRL_f-f`: `CTRL_f-d`.
 
 * Manually make a visual selection with `b`, like `v3b`, then
- `<C-f>v` will surround the text with `[]` and place the cursor
- inside the `()` with `<C-r>` waiting for the register: `CTRL-f_v`
+ `<C-f>v` will surround the text with `[]` and leave the cursor in 
+ insert mode inside the `()`: `CTRL-f_v`
 
 ### Overwrite the next paragraph  
 
