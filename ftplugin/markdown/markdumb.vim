@@ -43,7 +43,7 @@ if !exists('g:InsertLinkMap')
 endif
 
 function! InsertMarkdownLink()
-    execute "normal! i[]()"
+    execute "normal! a[]()"
     execute "normal! F]" 
     startinsert
 endfunction
