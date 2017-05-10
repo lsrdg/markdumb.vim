@@ -33,9 +33,9 @@ endfunction
 execute "inoremap" g:NextParagraphI '<cr><esc>:call NextParagraph("i")<cr>'
 
 execute "inoremap" g:NextParagraphN '<cr><esc>:call NextParagraph("n")<cr>'
+
+
 """"""""""""""""""""""""""""""
-
-
 " Insert markdown's link structure and move to the []
 
 if !exists('g:InsertLinkMap')
@@ -50,8 +50,22 @@ endfunction
 
 execute "inoremap" g:InsertLinkMap '<esc>:call InsertMarkdownLink()<cr>'
 
+
+""""""""""""""""""""""""""""""
 " Move to inside the next parenthesis with <C-r> waiting
-inoremap qq <esc>f(a<C-r>
+
+if !exists('g:MoveToLinkID')
+    let g:MoveToLinkID = "<C-f>d
+endif
+
+function! FindLinkIDParenthesis()
+    execute "normal! f(a<C-r>)"
+endfunction
+
+execute "inoremap" g:MoveToLinkID '<esc>:call FindLinkIDParenthesis()<cr>'
+
+"
+""""""""""""""""""""""""""""""
 " <C-f>v will surround the text with [] and place the cursor
 " inside the () with <C-r> waiting for the register
 vnoremap <C-f>v <esc>i[<esc>gvo<esc>ea]()<esc>i<C-r>
