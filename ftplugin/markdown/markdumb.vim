@@ -81,3 +81,17 @@ endfunction
 
 execute "vnoremap" g:InsertMarkdownLinkVBmap '<esc>:call InsertMarkdownLinkVB()<cr>'
 
+"
+""""""""""""""""""""""""""""""
+" Create a code block and place the cursor inside
+
+if !exists('CreateMarkdowniCodeBlock')
+    let g:MarkdownCodeBlock = "<C-f>q"
+endif
+
+function! InsertMarkdownCodeBlock()
+    execute "normal! o\<esc>o```\n```\<esc>zzO"
+    startinsert
+endfunction
+
+execute "inoremap" g:MarkdownCodeBlock '<esc>:call InsertMarkdownCodeBlock()<cr>'
