@@ -96,3 +96,17 @@ endfunction
 
 execute "inoremap" g:MarkdownCodeBlock '<esc>:call InsertMarkdownCodeBlock()<cr>'
 
+"
+""""""""""""""""""""""""""""""
+" Paste a quote block 
+
+if !exists('MarkdumbPasteQuote')
+    let g:MarkdumbPasteQuote = "<C-f>q"
+endif
+
+function! PasteQuoteBlock()
+    execute "normal! o\n>\<C-r>+\<esc>o\n"
+    startinsert
+endfunction
+
+execute "inoremap" g:MarkdumbPasteQuote '<esc>:call PasteQuoteBlock()<cr>'
