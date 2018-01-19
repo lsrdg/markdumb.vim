@@ -111,6 +111,26 @@ If you don't like those mappings, just change them to something else:
     let g:NextParagraphI = 'jk'
 ```
 
+### Code block sections
+
+- `<c-f>c` creates an empty block code section and places the cursor inside it.
+- `V4j<c-f>c` visually select from the current line to four lines down and
+  surround them as a code block.
+
+Considering the following text:
+
+```
+this is line one
+this is line two
+this is line three
+this is line four
+this is line five
+```
+
+If you are in line one and press `V4j<c-f>c`, the result will be surrounded with
+` ``` ` (three backticks).
+
+
 ## Bugs                                       
 
 Always. Just open an issue on github. (:

@@ -98,6 +98,20 @@ execute "inoremap" g:MarkdownCodeBlock '<esc>:call InsertMarkdownCodeBlock()<cr>
 
 "
 """"""""""""""""""""""""""""""
+" Surround a visually selected code block with three backticks
+if !exists('SurroundMarkdownCodeBlock')
+    let g:SurroundMarkdownCodeBlock = "<C-f>c"
+endif
+
+function! VisualMarkdownCodeBlock()
+    execute "'<normal! O```"
+    execute "'>normal! o```"
+endfunction
+
+execute "vnoremap" g:SurroundMarkdownCodeBlock '<esc>:call VisualMarkdownCodeBlock()<cr>'
+
+"
+""""""""""""""""""""""""""""""
 " Paste a quote block 
 
 if !exists('MarkdumbPasteQuote')
@@ -105,7 +119,7 @@ if !exists('MarkdumbPasteQuote')
 endif
 
 function! PasteQuoteBlock()
-    execute "normal! o\n>\<C-r>+\<esc>o\n"
+    execute "normal! o\n\<C-r>+\<esc>o\n"
     startinsert
 endfunction
 
